@@ -1,59 +1,131 @@
-## Title of the Project
-Small description about the project like one below
-The integration of a chatbot within a hostel booking system, aimed at streamlining the reservation process for students and improving the overall user experience.
+
+
+## Vision Estate: AI-Powered Real Estate Analyzer
+
+Vision Estate is an AI-powered verification and analysis engine designed to automate property validation by eliminating the dependency on subjective, self-reported data. By integrating state-of-the-art computer vision and deep learning, the platform transforms raw property media into a structured, machine-readable inventory of physical and legal attributes.
 
 ## About
-<!--Detailed Description about the project-->
-Tailored Chatbot for Hostel Booking System is a project designed to integrate a chatbot that leverages advanced natural language processing techniques to understand and respond to user queries to the hostel booking system. Traditional hostel booking processes are often time-consuming and involve manual searches and extensive communication with hostel staff. This project seeks to overcome these challenges by creating an easy-to-use chatbot interface that assists students in addressing inquiries.
+
+Vision Estate addresses the critical "trust gap" found in current real estate platforms where key details like floor area, property condition, and legal ownership are often unverified. This project proposes an automated solution that uses deep learning to process user-uploaded data, removing the need for high-friction manual inspections. The system leverages (1) ML-assisted document processing for ownership verification, (2) 3D reconstruction and spatial calibration for area estimation, and (3) computer vision-based quality analysis to detect structural flaws. The goal is to democratize trust in the real estate market by providing a transparent, data-driven assessment layer for all stakeholders.
 
 ## Features
-<!--List the features of the project as shown below-->
-- Implements advance neural network method.
-- A framework based application for deployment purpose.
-- High scalability.
-- Less time complexity.
-- A specific scope of Chatbot response model, using json data format.
+
+* **Structural Health Monitoring:** Uses a specialized YOLOv8 model (`crack.pt`) to identify and localize defects such as wall cracks or water stains with high precision.
+
+
+* **Automated Area Estimation:** Calculates floor area and room dimensions by detecting standard reference objects (like A4 paper) to establish a "Meters-per-Pixel" scale.
+
+
+* **3D Spatial Understanding:** Integrates MiDaS depth estimation and SegFormer-based floor segmentation to generate 3D spatial understanding and volume of rooms.
+
+
+* **Legal Document Verification:** Utilizes OCR and Named Entity Recognition (NER) to extract and cross-validate legal entities like Owner Name and Property ID from deeds.
+
+
+* **Trust Scoring:** Automatically flags discrepancies if the AI-estimated area differs significantly from the user's claimed area (e.g., >15% difference).
+
+
 
 ## Requirements
-<!--List the requirements of the project as shown below-->
-* Operating System: Requires a 64-bit OS (Windows 10 or Ubuntu) for compatibility with deep learning frameworks.
-* Development Environment: Python 3.6 or later is necessary for coding the sign language detection system.
-* Deep Learning Frameworks: TensorFlow for model training, MediaPipe for hand gesture recognition.
-* Image Processing Libraries: OpenCV is essential for efficient image processing and real-time hand gesture recognition.
-* Version Control: Implementation of Git for collaborative development and effective code management.
-* IDE: Use of VSCode as the Integrated Development Environment for coding, debugging, and version control integration.
-* Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), TensorFlow GPU, OpenCV, and Mediapipe for deep learning tasks.
+
+* **Operating System:** Windows 10/11, macOS, or Linux (Ubuntu 20.04+).
+
+
+* **Hardware:** Intel Core i5/i7 or AMD Ryzen 5 processor; 8 GB RAM minimum (16 GB recommended).
+
+
+* **GPU:** NVIDIA GeForce GTX 1650 or higher for CUDA acceleration and model training.
+
+
+* **Development Environment:** Python 3.9+ and Node.js (for React frontend).
+
+
+* **Deep Learning Frameworks:** Ultralytics (YOLOv8) for object/crack detection, PyTorch for MiDaS and SegFormer models.
+
+
+* **Image Processing:** OpenCV for bilateral filtering, adaptive thresholding, and geometric contour analysis.
+
+
+* **Backend:** FastAPI with Pydantic for data validation and uvicorn for asynchronous serving.
+
+
 
 ## System Architecture
-<!--Embed the system architecture diagram as shown below-->
 
-![Screenshot 2023-11-25 133637](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/a60c11f3-0a11-47fb-ac89-755d5f45c995)
+The system follows a modern, scalable microservice architecture where high-resolution images are processed through specialized pipelines for feature extraction and spatial analysis.
 
+## Training and Model Optimization
+
+The core intelligence for crack detection was developed using a custom dataset of building material variations and environmental contexts.
+
+* **Training Environment:** [Google Colab - VisionEstate Training](https://colab.research.google.com/drive/14L0KdbrHlrlsOT3INzAW_K1ecGFnFRgs?usp=sharing)
+
+* **Process:** The model was trained using YOLOv8, monitored via loss curves, and the best-performing weights were exported as `crack.pt` for deployment.
+
+
+
+## Execution Instructions
+
+You will need **two separate terminals** to run the full application.
+
+### 1. Backend Server (FastAPI)
+
+Navigate to the backend folder, install the necessary dependencies, and start the server:
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+```
+
+* **Interactive API Docs:** Once the backend is running, you can view all endpoints and test them at **`http://localhost:8000/docs`**.
+
+### 2. Frontend Application (React)
+
+Open a second terminal to run the development server for the marketplace:
+
+```bash
+npm run dev
+
+```
+
+### 3. Admin Access
+
+To access the admin dashboard to approve properties or view detailed verification metrics:
+
+* **URL Route:** `/admin`
+* **Admin Email:** `jaisurya1801@gmail.com`
+* **Admin Password:** `Ypyq7jvcl@1`
 
 ## Output
 
-<!--Embed the Output picture at respective places as shown below as shown below-->
-#### Output1 - Name of the output
+#### Output 1 - Feature Analysis Gallery
 
-![Screenshot 2023-11-25 134037](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/8c2b6b5c-5ed2-4ec4-b18e-5b6625402c16)
+The gallery displays uploaded images with real-time bounding box overlays identifying amenities and structural defects.
 
-#### Output2 - Name of the output
-![Screenshot 2023-11-25 134253](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/5e05c981-05ca-4aaa-aea2-d918dcf25cb7)
+#### Output 2 - Spatial Estimation & 3D Visualization
 
-Detection Accuracy: 96.7%
-Note: These metrics can be customized based on your actual performance evaluations.
-
+The spatial engine provides precise measurements (Width, Height, Length) and a 3D wireframe reconstruction of the room.
 
 ## Results and Impact
-<!--Give the results and impact as shown below-->
-The Sign Language Detection System enhances accessibility for individuals with hearing and speech impairments, providing a valuable tool for inclusive communication. The project's integration of computer vision and deep learning showcases its potential for intuitive and interactive human-computer interaction.
 
-This project serves as a foundation for future developments in assistive technologies and contributes to creating a more inclusive and accessible digital environment.
+Vision Estate effectively replaces subjective seller descriptions with machine-readable data. By automating the verification of legal deeds and physical dimensions, the project reduces the risk of fraud and financial loss for buyers. The integration of computer vision ensures that property health is graded objectively, setting a new standard for transparency in digital real estate marketplaces.
 
 ## Articles published / References
-1. N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods ”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-2. A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
+
+1. Law et al. (2019): "CNN-based building defect detection using VGG-16 and Class Activation Mapping." 
 
 
+2. Choi et al. (2024): "Comparison of Mask R-CNN vs YOLOv8 for Concrete crack images." 
+
+
+3. Wang et al. (2023): "SfM-MVS pipeline with semantic segmentation for 3D property inspection." 
+
+
+4. Jocher, G., et al. (2024). "Ultralytics YOLOv8: Real-time Object Detection and Predictive Analytics." 
+
+
+5. Anand, S., & Gupta, R. (2025). "Automated Verification of Real Estate Titles using OCR and Named Entity Recognition." 
 
 
