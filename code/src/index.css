@@ -1,0 +1,154 @@
+/* Fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   VisionEstate - Black & White Theme
+   Clean, minimal, professional
+======================================== */
+
+@layer base {
+  :root {
+    /* Black & White Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Primary - Pure Black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Gray */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+
+    /* Muted - Soft Gray */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - Dark Gray */
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 8%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Fraunces', Georgia, serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .btn-black {
+    @apply bg-foreground text-background hover:bg-foreground/90 transition-colors;
+  }
+
+  .property-card {
+    @apply rounded-lg border border-border overflow-hidden transition-all duration-200;
+  }
+
+  .property-card:hover {
+    @apply shadow-lg border-foreground/20;
+    transform: translateY(-2px);
+  }
+
+  .badge-verified {
+    @apply inline-flex items-center gap-1 px-2 py-1 bg-foreground text-background text-xs font-medium rounded;
+  }
+
+  .badge-sale {
+    @apply inline-flex items-center px-2 py-1 bg-background text-foreground text-xs font-medium rounded border border-foreground;
+  }
+
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+
+  .aspect-property {
+    aspect-ratio: 4/3;
+  }
+
+  .grid-properties {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+  }
+
+  .hover-up {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+
+  .bg-warm {
+    @apply bg-secondary;
+  }
+
+  .text-responsive {
+    @apply text-sm sm:text-base;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
