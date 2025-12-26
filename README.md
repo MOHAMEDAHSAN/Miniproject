@@ -8,11 +8,8 @@ Vision Estate is an AI-powered verification and analysis engine designed to auto
 <img width="1083" height="787" alt="14" src="https://github.com/user-attachments/assets/60492984-fba5-412f-8d6d-ff05a58f6adc" />
 <img width="1838" height="862" alt="2" src="https://github.com/user-attachments/assets/f3ea77da-d841-44c6-a9da-b01865ca562d" />
 <img width="1076" height="881" alt="11" src="https://github.com/user-attachments/assets/4b6b7872-462e-4a5e-bb53-d885f018fb21" />
-<<<<<<< HEAD
-<img src="C:\Users\admin\Desktop\Final Review\VisionAi-v1\img\Output Images\15.png">
-=======
+<img width="1717" height="800" alt="15" src="https://github.com/user-attachments/assets/298cc573-0876-40c0-9a29-c73ecfa459be" />
 
->>>>>>> c9f59d0f43450a6c0d0afebfbf8e91ad3153d649
 
 ## About
 
