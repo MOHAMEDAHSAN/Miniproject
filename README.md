@@ -4,6 +4,12 @@
 
 Vision Estate is an AI-powered verification and analysis engine designed to automate property validation by eliminating the dependency on subjective, self-reported data. By integrating state-of-the-art computer vision and deep learning, the platform transforms raw property media into a structured, machine-readable inventory of physical and legal attributes.
 
+<img width="1483" height="825" alt="1" src="https://github.com/user-attachments/assets/09ba0346-12d9-472b-b8ac-cc45604c3677" />
+<img width="1083" height="787" alt="14" src="https://github.com/user-attachments/assets/60492984-fba5-412f-8d6d-ff05a58f6adc" />
+<img width="1838" height="862" alt="2" src="https://github.com/user-attachments/assets/f3ea77da-d841-44c6-a9da-b01865ca562d" />
+<img width="1076" height="881" alt="11" src="https://github.com/user-attachments/assets/4b6b7872-462e-4a5e-bb53-d885f018fb21" />
+
+
 ## About
 
 Vision Estate addresses the critical "trust gap" found in current real estate platforms where key details like floor area, property condition, and legal ownership are often unverified. This project proposes an automated solution that uses deep learning to process user-uploaded data, removing the need for high-friction manual inspections. The system leverages (1) ML-assisted document processing for ownership verification, (2) 3D reconstruction and spatial calibration for area estimation, and (3) computer vision-based quality analysis to detect structural flaws. The goal is to democratize trust in the real estate market by providing a transparent, data-driven assessment layer for all stakeholders.
